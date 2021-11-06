@@ -2,7 +2,11 @@ const express = require('express')
 const router = new express.Router()  //create a new router
 const User = require('../models/user')
 const auth  = require('../middleware/auth')
+<<<<<<< HEAD
 
+=======
+const multer = require('multer')
+>>>>>>> lap
 
 /////////////USERS////////////
 //Adding users
@@ -90,7 +94,11 @@ router.patch('/users/me', auth,async (req,res) => {
 //Deleting users
 router.delete('/users/me',auth, async(req,res) => {
     try{
+<<<<<<< HEAD
         await req.user.deleteOne()
+=======
+        await req.user.remove()
+>>>>>>> lap
         res.status(200).send(req.user)
     }catch (e){
         res.status(500).send(e)
@@ -98,4 +106,51 @@ router.delete('/users/me',auth, async(req,res) => {
 
 })
 
+<<<<<<< HEAD
+=======
+const upload =  multer({
+    limits: {
+        fileSize: 1000000
+    },
+    fileFilter(req,file,cb) {
+        if(!file.originalname.match(/\.(png|jpg|jpeg)$/)){
+            return cb(new Error('unsupported image format'))
+
+        }
+
+        cb(undefined,true)
+        // cb(new Error('File must be a PDF'))
+        // cb(undefined,true)
+        // cb(undefined,true)
+    }
+})
+
+router.post('/users/me/avatar',auth,upload.single('avatar'),async (req,res) => {
+    req.user.avatar = req.file.buffer
+    await req.user.save()
+    res.send()
+},(error,req,res,next) => {
+    res.status(400).send({error: error.message})
+})
+
+router.delete('/users/me/delAvatar',auth,async(req,res) => {
+   req.user.avatar = undefined
+    await  req.user.save()
+    res.send()
+})
+
+router.get('/users/:id/avatar',async(req,res) => {
+    try{
+        const user = await User.findById(req.params.id)
+        if(!user || !user.avatar){
+            throw new Error ()
+        }
+        res.set('Content-type','image/jpg')
+        res.send(user.avatar)
+    }catch(e){
+        res.status(404).send(e)
+    }
+})
+
+>>>>>>> lap
 module.exports = router
