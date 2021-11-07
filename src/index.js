@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> lap
 const express = require('express')
 require('./db/mongoose')
 const userRouter = require('./routers/user')
 const taskRouter = require('./routers/task')
-
-<<<<<<< HEAD
-
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -25,12 +18,6 @@ const port = process.env.PORT || 3000
 //     if(req.method === req.method)
 //     res.status(503).send('Site is under maintainance please try again after sometime')
 // })
-
-=======
-const app = express()
-const port = process.env.PORT || 3000
-
->>>>>>> lap
 app.use(express.json())
 app.use(userRouter)  //registering router with express app
 app.use(taskRouter)
@@ -40,8 +27,6 @@ app.listen(port,() => {
     console.log('Server is up on port' + port)
 })
 
-
-<<<<<<< HEAD
 // const Task = require('./models/task')
 // const User = require('./models/user')
 // const main = async() => {
@@ -54,7 +39,3 @@ app.listen(port,() => {
 // }
 
 // main()
-=======
-
->>>>>>> lap
-

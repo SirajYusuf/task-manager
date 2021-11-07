@@ -2,12 +2,7 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 
 
-<<<<<<< HEAD
-
-const Task = mongoose.model('Task',{
-=======
 const taskSchema = new mongoose.Schema({
->>>>>>> lap
     description: {
         type: String,
         required: true,
@@ -22,16 +17,10 @@ const taskSchema = new mongoose.Schema({
         required: true,
         ref: 'User'
     }
-<<<<<<< HEAD
-})
-
-
-=======
 },{
     timestamps: true
 })
 
 const Task = mongoose.model('Task',taskSchema)
->>>>>>> lap
 
 module.exports = Task

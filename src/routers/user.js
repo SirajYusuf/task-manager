@@ -2,17 +2,12 @@ const express = require('express')
 const router = new express.Router()  //create a new router
 const User = require('../models/user')
 const auth  = require('../middleware/auth')
-<<<<<<< HEAD
-
-=======
 const multer = require('multer')
->>>>>>> lap
 
 /////////////USERS////////////
 //Adding users
 router.post('/addUser', async(req,res) => {
     const user = new User(req.body)
-    
     try{
         const token = await user.generateAuthToken()
         await user.save()
@@ -94,11 +89,7 @@ router.patch('/users/me', auth,async (req,res) => {
 //Deleting users
 router.delete('/users/me',auth, async(req,res) => {
     try{
-<<<<<<< HEAD
-        await req.user.deleteOne()
-=======
         await req.user.remove()
->>>>>>> lap
         res.status(200).send(req.user)
     }catch (e){
         res.status(500).send(e)
@@ -106,8 +97,6 @@ router.delete('/users/me',auth, async(req,res) => {
 
 })
 
-<<<<<<< HEAD
-=======
 const upload =  multer({
     limits: {
         fileSize: 1000000
@@ -152,5 +141,4 @@ router.get('/users/:id/avatar',async(req,res) => {
     }
 })
 
->>>>>>> lap
 module.exports = router

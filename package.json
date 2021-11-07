@@ -1,28 +1,28 @@
 {
   "name": "task-manager",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "mongodb.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.3",
+    "nodemon": "^2.0.13",
+    "term-size": "^2.2.1"
+  },
+  "devDependencies": {},
   "scripts": {
-    "start": "node src/index.js",
     "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SirajYusuf/taskManager.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongodb": "^4.1.1",
-    "mongoose": "^6.0.6",
-<<<<<<< HEAD
-=======
-    "multer": "^1.4.3",
->>>>>>> lap
-    "validator": "^13.6.0"
+  "bugs": {
+    "url": "https://github.com/SirajYusuf/taskManager/issues"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.13"
-  },
-  "description": ""
+  "homepage": "https://github.com/SirajYusuf/taskManager#readme"
 }

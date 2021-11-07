@@ -21,12 +21,6 @@ router.post('/addTask',auth, async (req, res) => {
 
 //requesting tasks
 router.get('/tasks',auth, async (req, res) => {
-<<<<<<< HEAD
-    try {
-        // const tasks = await Task.find({owner: req.user._id})
-        // either approach is gonna work
-        await req.user.populate('tasks')
-=======
    const match = {}
    const sort = {}
    if(req.query.completed){
@@ -48,7 +42,6 @@ router.get('/tasks',auth, async (req, res) => {
                 sort
             }
         })
->>>>>>> lap
         res.send(req.user.tasks)
     } catch (e) {
         res.status(500).send()
