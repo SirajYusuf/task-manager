@@ -1,7 +1,6 @@
 {
   "name": "task-manager",
   "version": "1.0.0",
-  "description": "",
   "main": "mongodb.js",
   "dependencies": {
     "@sendgrid/mail": "^7.6.0",
@@ -33,5 +32,6 @@
   "homepage": "https://github.com/SirajYusuf/taskManager#readme",
   "devDependencies": {
     "env-cmd": "^10.1.0"
-  }
+  },
+  "description": ""
 }
