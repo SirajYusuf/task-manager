@@ -4,6 +4,7 @@
   "description": "",
   "main": "mongodb.js",
   "dependencies": {
+    "@sendgrid/mail": "^7.6.0",
     "bcryptjs": "^2.4.3",
     "expres": "^0.0.5",
     "express": "^4.17.2",
@@ -16,7 +17,8 @@
     "validator": "^13.7.0"
   },
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "start": "node src/index.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/SirajYusuf/taskManager/issues"
   },
-  "homepage": "https://github.com/SirajYusuf/taskManager#readme"
+  "homepage": "https://github.com/SirajYusuf/taskManager#readme",
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
+  }
 }
