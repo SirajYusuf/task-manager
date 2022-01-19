@@ -33,5 +33,9 @@
   "devDependencies": {
     "env-cmd": "^10.1.0"
   },
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": "v16.11.1",
+    "npm": "8.0.0"
+  }
 }
