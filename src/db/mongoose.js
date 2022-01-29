@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb+srv://siraj:sirajyusuf@cluster0.ft2xf.mongodb.net/task-manager-api?retryWrites=true&w=majority').then(() => {
+mongoose.connect(process.env.MONGODB_URL).then(() => {
     console.log('db connection was successful')
 }).catch((e) => {
     console.log('error: ' + e)
