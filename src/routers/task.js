@@ -42,7 +42,7 @@ router.get('/tasks',auth, async (req, res) => {
                 sort
             }
         })
-        res.send(req.user.tasks)
+        res.status(200).send(req.user.tasks)
     } catch (e) {
         res.status(500).send()
     }

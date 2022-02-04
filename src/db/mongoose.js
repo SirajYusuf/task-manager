@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.MONGODB_URL).then(() => {
+const connect = mongoose.connect(process.env.MONGODB_URL).then(() => {
     console.log('db connection was successful')
 }).catch((e) => {
     console.log('error: ' + e)
 })
 
-
+module.exports = connect
 // const tasks = new Task({
 //     description: 'Servicing the car',
 //     completed: true
