@@ -49,5 +49,8 @@
   "engines": {
     "node": "v16.11.1",
     "npm": "8.0.0"
+  },
+  "directories": {
+    "test": "tests"
   }
 }
